@@ -8,8 +8,7 @@ Requirements:
 * Chrome or Electron browser installed
 * Internet access to open the Bigbank loan calculator
 
-1. Clone the project
-```bash
+1.Clone the project
 git clone 
 cd loan-calculator-tests
 

@@ -1,13 +1,15 @@
-#Loan Calculator E2E Test Suite
+# Loan Calculator E2E Test Suite
 
 This project contains automation tests for verifying the functionality of the loan calculator modal, using Cypress.
 
 ## Requirements:
--Node.js v20 or newer
--npm v10 or newer
--Chrome or Electron browser installed
--Internet access to open the Bigbank loan calculator
+* Node.js v20 or newer
+* npm v10 or newer
+* Chrome or Electron browser installed
+* Internet access to open the Bigbank loan calculator
 
+## Installation
+```
 ## Clone the project
 git clone 
 cd loan-calculator-tests

@@ -1,0 +1,209 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 4,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-07-22T22:32:28.818Z",
+    "end": "2025-07-22T22:33:14.165Z",
+    "duration": 45347,
+    "testsRegistered": 6,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4a28d441-1ed4-4dd2-9681-81814448076c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\loanCalculatorTest.cy.js",
+      "file": "cypress\\e2e\\tests\\loanCalculatorTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bf783c29-ba4d-4333-8a83-2aa899298384",
+          "title": "Loan calculator modal",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "display calculator modal",
+              "fullTitle": "Loan calculator modal display calculator modal",
+              "timedOut": null,
+              "duration": 6365,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "calculator.getCalculatorModal().should('be.visible');",
+              "err": {},
+              "uuid": "bbe42b03-2f1c-4b2f-b8b8-74efca7a6062",
+              "parentUUID": "bf783c29-ba4d-4333-8a83-2aa899298384",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "display the calculator modal title",
+              "fullTitle": "Loan calculator modal display the calculator modal title",
+              "timedOut": null,
+              "duration": 2659,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "calculator.getCalculatorModalTitle().should('have.length', 1).and('be.visible');",
+              "err": {},
+              "uuid": "02fc4932-837f-42b2-917f-22d8414fa7e5",
+              "parentUUID": "bf783c29-ba4d-4333-8a83-2aa899298384",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "displays correct monthly payment after entering amount and period",
+              "fullTitle": "Loan calculator modal displays correct monthly payment after entering amount and period",
+              "timedOut": null,
+              "duration": 12160,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "calculator.fillAmount('10000');\ncalculator.fillPeriod('36');\ncalculator.getMonthlyPayment().should('contain', '350.36');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.bb-labeled-value__value>' to contain '350.36'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.bb-labeled-value__value>' to contain '350.36'\n    at Context.eval (webpack://loan-calculator-tests/./cypress/e2e/tests/loanCalculatorTest.cy.js:22:35)",
+                "diff": null
+              },
+              "uuid": "697a3ffb-d32d-465a-a83f-74d17b8f6177",
+              "parentUUID": "bf783c29-ba4d-4333-8a83-2aa899298384",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "displays correct monthly payment if amount and period inputs change",
+              "fullTitle": "Loan calculator modal displays correct monthly payment if amount and period inputs change",
+              "timedOut": null,
+              "duration": 8791,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "calculator.fillAmount('10000');\ncalculator.fillPeriod('36');\ncalculator.getMonthlyPayment().should('contain', '350.36');\ncalculator.fillAmount('7528');\ncalculator.fillPeriod('102');\ncalculator.clickOnMonthlyPaymentBox();\ncalculator.getMonthlyPayment().should('contain', '135.19');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.bb-labeled-value__value>' to contain '350.36'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.bb-labeled-value__value>' to contain '350.36'\n    at Context.eval (webpack://loan-calculator-tests/./cypress/e2e/tests/loanCalculatorTest.cy.js:28:35)",
+                "diff": null
+              },
+              "uuid": "3307547e-34be-4506-bfff-1ede2483f4a2",
+              "parentUUID": "bf783c29-ba4d-4333-8a83-2aa899298384",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "allows decimal input values in the amount field",
+              "fullTitle": "Loan calculator modal allows decimal input values in the amount field",
+              "timedOut": null,
+              "duration": 4794,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "calculator.fillAmount('5020,55');\ncalculator.getAmountField().should('have.value', '5020.55');\ncalculator.fillPeriod('66');\ncalculator.clickOnMonthlyPaymentBox();\ncalculator.getMonthlyPayment().should('contain', '116.19');",
+              "err": {},
+              "uuid": "8995b85e-c11c-4098-a4f7-56c6ad89ae88",
+              "parentUUID": "bf783c29-ba4d-4333-8a83-2aa899298384",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "continue button navigates to next step and displays correct loan amount",
+              "fullTitle": "Loan calculator modal continue button navigates to next step and displays correct loan amount",
+              "timedOut": null,
+              "duration": 3933,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "calculator.fillAmount('12000');\ncalculator.clickContinue();\ncalculator.getNextStepLoanAmount().should('contain', '12000');",
+              "err": {},
+              "uuid": "b9cae124-d789-4e0d-9c22-03f1f1ded59c",
+              "parentUUID": "bf783c29-ba4d-4333-8a83-2aa899298384",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bbe42b03-2f1c-4b2f-b8b8-74efca7a6062",
+            "02fc4932-837f-42b2-917f-22d8414fa7e5",
+            "8995b85e-c11c-4098-a4f7-56c6ad89ae88",
+            "b9cae124-d789-4e0d-9c22-03f1f1ded59c"
+          ],
+          "failures": [
+            "697a3ffb-d32d-465a-a83f-74d17b8f6177",
+            "3307547e-34be-4506-bfff-1ede2483f4a2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 38702,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

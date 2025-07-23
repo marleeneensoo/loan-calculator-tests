@@ -1,0 +1,45 @@
+  export class LoanCalculatorPage {
+
+    openLoanCalculatorPage() {
+        cy.visit('/?amount=5000&period=60&productName=SMALL_LOAN&loanPurpose=DAILY_SETTLEMENTS');
+      }
+   
+    getCalculatorModal() {
+      return cy.get('div.bb-modal.wrapper.bb-modal--m.bb-modal--card.bb-modal--card-full-mobile');
+    }
+  
+    getCalculatorModalTitle() {
+      return cy.get('h2').contains('Vali sobiv summa ja periood');
+    }
+  
+    fillAmount(value) {
+      cy.get('input[name="header-calculator-amount"]').clear().type(value);
+    }
+
+    getAmountField(){
+        return cy.get('input[name="header-calculator-amount"]');
+    }
+  
+    fillPeriod(value) {
+      cy.get('input[name="header-calculator-period"]').clear().type(value);
+    }
+  
+    getMonthlyPayment() {
+      return cy.get('[data-testid="bb-labeled-value__value"]');
+    }
+  
+    clickContinue() {
+      cy.contains('JÄTKA').click();
+    }
+
+    clickOnMonthlyPaymentBox(){
+      cy.get('.bb-calculator__result-for-sliders.bb-box').click();
+    }
+
+    getNextStepLoanAmount(){
+      return cy.get('.bb-edit-amount__amount');
+    }
+
+  
+  }
+  

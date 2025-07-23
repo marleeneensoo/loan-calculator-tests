@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-20T20:36:27.413Z",
+    "end": "2025-07-20T20:36:40.456Z",
+    "duration": 13043,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ed43e02f-51f3-4c44-8770-900e6261c4da",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\loanCalculatorTest.cy.js",
+      "file": "cypress\\e2e\\tests\\loanCalculatorTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cae09d53-90c0-44a7-88ee-1f1940eb3df6",
+          "title": "Loan calculator",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should display calculator modal",
+              "fullTitle": "Loan calculator Should display calculator modal",
+              "timedOut": null,
+              "duration": 5143,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "calculator.getCalculatorModal().should('be.visible');",
+              "err": {},
+              "uuid": "902b1405-3658-4328-bef4-2a013c33cebd",
+              "parentUUID": "cae09d53-90c0-44a7-88ee-1f1940eb3df6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should display the calculator modal title",
+              "fullTitle": "Loan calculator Should display the calculator modal title",
+              "timedOut": null,
+              "duration": 2397,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "calculator.getCalculatorModalTitle().should('have.length', 1).and('be.visible');",
+              "err": {},
+              "uuid": "0d863a58-fc0b-4a39-b7e1-140c19134a85",
+              "parentUUID": "cae09d53-90c0-44a7-88ee-1f1940eb3df6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should continue to next page",
+              "fullTitle": "Loan calculator Should continue to next page",
+              "timedOut": null,
+              "duration": 4956,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "calculator.fillAmount('10000');\ncalculator.fillPeriod('36');\ncalculator.getMonthlyPayment().should('contain', '242.02');\ncalculator.clickContinue();\ncy.get('.bb-edit-amount__amount').should('contain', '10000');",
+              "err": {},
+              "uuid": "ad422bf4-f9a3-4ec6-b0d4-2f9fb4fc5277",
+              "parentUUID": "cae09d53-90c0-44a7-88ee-1f1940eb3df6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "902b1405-3658-4328-bef4-2a013c33cebd",
+            "0d863a58-fc0b-4a39-b7e1-140c19134a85",
+            "ad422bf4-f9a3-4ec6-b0d4-2f9fb4fc5277"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12496,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
